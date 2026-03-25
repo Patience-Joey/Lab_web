@@ -844,6 +844,53 @@ ul {
   color: var(--light-color);
 }
 
+/* 实验室资源 */
+.lab-resources {
+  padding: var(--section-spacing) 0;
+  background-color: var(--light-gray);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 30px;
+}
+
+.resource-card {
+  background-color: var(--light-color);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.resource-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.resource-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.resource-card:hover .resource-image img {
+  transform: scale(1.05);
+}
+
+.resource-card h3 {
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 /* 联系我们 */
 .contact-preview {
   padding: var(--section-spacing) 0;
