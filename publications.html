@@ -377,6 +377,44 @@
 
         <!-- <button class="filter-btn" data-filter="journal">期刊论文</button> -->
       </div>
+      
+     <!-- 2026年 -->
+     <div class="publications-year">
+          <div class="year-heading">
+            <h2>2026</h2>
+            <div class="year-line"></div>
+          </div>
+       
+              <!-- 论文: TARGO -->
+          <div class="publication-card" data-category="journal">
+            <h3 class="publication-title">TARGO and TARGO-Net: Benchmarking Target-driven Object Grasping under Occlusions</h3>
+            <p class="publication-authors">Yan Xia, Ran Ding, Ziyuan Qin, Guanqi Zhan, Kaichen Zhou, Long Yang, Hao Dong, Daniel Cremers</p>
+            <span class="publication-venue">IJCV 2026</span>
+            <p class="publication-abstract">
+              This work introduces TARGO, a benchmark dataset for investigating robotic grasping of target objects in cluttered
+              environments with occlusions. We evaluate five existing grasp models and find that performance degrades as
+              occlusion increases. We propose TARGO-Net, a transformer-based model with shape completion capabilities that
+              demonstrates improved robustness under occlusion.
+            </p>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2407.06168" class="publication-link"><i class="fas fa-file-pdf"></i> 论文PDF</a>
+              <a href="https://github.com/TARGO-benchmark/TARGO" class="publication-link"><i class="fab fa-github"></i> 代码</a>
+              <a href="https://targo-benchmark.github.io/" class="publication-link"><i class="fas fa-globe"></i> 项目主页</a>
+            </div>
+            <div class="publication-info">
+              <div class="publication-tags">
+                <span class="publication-tag">机器人抓取</span>
+                <span class="publication-tag">遮挡场景</span>
+                <span class="publication-tag">基准测试</span>
+              </div>
+              <div class="publication-metrics">
+                <div class="metric">
+                  <i class="fas fa-quote-right"></i>
+                  <span class="citation-count">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
       <!-- 2025年 -->
       <div class="publications-year">
@@ -388,7 +426,7 @@
                 <!-- 论文1: TrafficLoc -->
         <div class="publication-card" data-category="conference">
           <h3 class="publication-title">TrafficLoc: Localizing Traffic Surveillance Cameras in 3D Scenes</h3>
-          <p class="publication-authors">Yan Xia1,2*†, Yunxiang Lu2*, Rui Song2,4, Oussema Dhaouadi2,5, João F. Henriques6, Daniel Cremers2,3</p>
+          <p class="publication-authors">Yan Xia, Yunxiang Lu, Rui Song, Oussema Dhaouadi, João F. Henriques, Daniel Cremers</p>
           <span class="publication-venue">ICCV 2025</span>
           <p class="publication-abstract">
             We tackle the problem of localizing the traffic surveillance cameras in cooperative perception. To overcome the lack of large-scale real-world intersection datasets, we introduce Carla Intersection, a new simulated dataset with 75 urban and rural intersections in Carla. Moreover, we introduce a novel neural network, TrafficLoc, localizing traffic cameras within a 3D reference map. TrafficLoc employs a coarse-to-fine matching pipeline. For image-point cloud feature fusion, we propose a novel Geometry-guided Attention Loss to address cross-modal viewpoint inconsistencies. During coarse matching, we propose an Inter-Intra Contrastive Learning to achieve precise alignment while preserving distinctiveness among local intra-features within image patch-point group pairs. Besides, we introduce Dense Training Alignment with a soft-argmax operator to consider additional features when regressing the final position. Extensive experiments show that our TrafficLoc improves the localization accuracy over the state-of-the-art Image-to-point cloud registration methods by a large margin (up to 86%) on Carla Intersection and generalizes well to real-world data. TrafficLoc also achieves new SOTA performance on KITTI and NuScenes datasets, demonstrating strong localization ability across both in-vehicle and traffic cameras.
@@ -415,7 +453,7 @@
                   <!-- 论文2: SparseAlign -->
         <div class="publication-card" data-category="conference">
           <h3 class="publication-title">OPAL: Visibility-aware LiDAR-to-OpenStreetMap Place Recognition via Adaptive Radial Fusion</h3>
-          <p class="publication-authors">Shuhao Kang*, Martin Y. Liao*, Yan Xia, Olaf Wysocki, Boris Jutzi, Daniel Cremers</p>
+          <p class="publication-authors">Shuhao Kang, Martin Y. Liao, Yan Xia, Olaf Wysocki, Boris Jutzi, Daniel Cremers</p>
           <span class="publication-venue">CoRL 2025</span>
           <p class="publication-abstract">
 LiDAR place recognition is a critical capability for autonomous navigation and cross-modal localization in large-scale outdoor environments. Existing approaches predominantly depend on pre-built 3D dense maps or aerial imagery, which impose significant storage overhead and lack real-time adaptability. In this paper, we propose OPAL, a novel network for LiDAR place recognition that leverages OpenStreetMap as a lightweight and up-to-date prior. Our key innovation lies in bridging the domain disparity between sparse LiDAR scans and structured OSM data through two carefully designed components: a cross-modal visibility mask that identifies maximal observable regions from both modalities to guide feature learning, and an adaptive radial fusion module that dynamically consolidates multiscale radial features into discriminative global descriptors. Extensive experiments on the augmented KITTI and KITTI-360 datasets demonstrate OPAL's superiority, achieving 15.98% higher recall at @1m threshold for top-1 retrieved matches while operating at 12x faster inference speeds compared to state-of-the-art approaches.
@@ -438,8 +476,6 @@ LiDAR place recognition is a critical capability for autonomous navigation and c
             </div>
           </div>
         </div>
-
-
                   <!-- 论文3: SparseAlign -->
         <div class="publication-card" data-category="conference">
           <h3 class="publication-title">AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models</h3>
@@ -470,37 +506,7 @@ Multimodal Large Language Models (MLLMs) achieve impressive performance once opt
 
 
 
-        <!-- 论文: TARGO -->
-        <div class="publication-card" data-category="journal">
-          <h3 class="publication-title">TARGO and TARGO-Net: Benchmarking Target-driven Object Grasping under Occlusions</h3>
-          <p class="publication-authors">Yan Xia, Ran Ding, Ziyuan Qin, Guanqi Zhan, Kaichen Zhou, Long Yang, Hao Dong, Daniel Cremers</p>
-          <span class="publication-venue">IJCV 2026</span>
-          <p class="publication-abstract">
-            This work introduces TARGO, a benchmark dataset for investigating robotic grasping of target objects in cluttered
-            environments with occlusions. We evaluate five existing grasp models and find that performance degrades as
-            occlusion increases. We propose TARGO-Net, a transformer-based model with shape completion capabilities that
-            demonstrates improved robustness under occlusion.
-          </p>
-          <div class="publication-links">
-            <a href="https://arxiv.org/abs/2407.06168" class="publication-link"><i class="fas fa-file-pdf"></i> 论文PDF</a>
-            <a href="https://github.com/TARGO-benchmark/TARGO" class="publication-link"><i class="fab fa-github"></i> 代码</a>
-            <a href="https://targo-benchmark.github.io/" class="publication-link"><i class="fas fa-globe"></i> 项目主页</a>
-          </div>
-          <div class="publication-info">
-            <div class="publication-tags">
-              <span class="publication-tag">机器人抓取</span>
-              <span class="publication-tag">遮挡场景</span>
-              <span class="publication-tag">基准测试</span>
-            </div>
-            <div class="publication-metrics">
-              <div class="metric">
-                <i class="fas fa-quote-right"></i>
-                <span class="citation-count">-</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  
         <!-- 论文4: SparseAlign -->
         <div class="publication-card" data-category="conference">
           <h3 class="publication-title">SparseAlign: A Fully Sparse Framework for Cooperative Object Detection</h3>
