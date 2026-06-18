@@ -14,7 +14,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 平滑滚动到锚点
   initSmoothScroll();
+
+  // 最新动态：最多展示6条，其余折叠
+  initNewsFold();
 });
+
+// 最新动态折叠功能
+function initNewsFold () {
+  const grid = document.querySelector('.latest-news .news-grid');
+  const toggle = document.getElementById('news-toggle');
+  if (!grid || !toggle) return;
+
+  const MAX = 6;
+  const items = Array.from(grid.querySelectorAll('.news-item'));
+  if (items.length <= MAX) {
+    toggle.style.display = 'none';
+    return;
+  }
+
+  const extra = items.slice(MAX);
+  extra.forEach(item => item.classList.add('news-hidden'));
+  toggle.style.display = '';
+  toggle.textContent = '查看全部新闻';
+
+  let expanded = false;
+  toggle.addEventListener('click', () => {
+    expanded = !expanded;
+    extra.forEach(item => item.classList.toggle('news-hidden', !expanded));
+    toggle.textContent = expanded ? '收起' : '查看全部新闻';
+  });
+}
 
 // 初始化轮播图
 function initSlider () {

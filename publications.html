@@ -441,7 +441,35 @@ Multimodal Large Language Models (MLLMs) achieve impressive performance once opt
             </div>
           </div>
         </div>
-      <!-- 2025年 -->
+
+        <!-- 论文: C-LaV -->
+        <div class="publication-card" data-category="conference">
+          <h3 class="publication-title">C-LaV: Conditional Latent Velocity Field Denoising for Weather-Robust LiDAR Place Recognition</h3>
+          <p class="publication-authors">Xuewei Cao1,2, Jiayue Yang1,2, Zhiwen Zeng1,2, Yanyong Zhang1,2, Yan Xia1,2,†</p>
+          <span class="publication-venue">CVPR 2026</span>
+          <p class="publication-abstract">
+            LiDAR-based place recognition is highly sensitive to rain, snow, and fog, where scattering and attenuation distort geometric structure and intensity. We tackle this problem with Conditional Latent Velocity Field (C-LaV) denoising, which restores weather-robust representations before retrieval. Single-sweep point clouds are projected into three-channel bird's-eye-view (BEV) images and encoded with a frozen DINOv2-based BEV transformer to obtain a semantically anchored latent space shared across weather conditions. On this manifold, a conditional Flow Matching model learns a velocity field whose probability-flow ordinary differential equation (ODE) deterministically transports noisy latents toward their clear-weather counterparts. From the denoised manifold, a Sinkhorn Aggregation of Local Descriptor (SALAD) head produces compact global descriptors optimized with a truncated Smooth-AP loss. We also established a unified adverse-weather benchmark with 3 m frame spacing and shared evaluation thresholds across KITTI, NCLT, and Boreas datasets. Our C-LaV improves Recall@1 by 17.5% on NCLT snow and 21.5% on Boreas, achieving state-of-the-art weather robustness.
+          </p>
+          <div class="publication-links">
+            <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Cao_C-LaV_Conditional_Latent_Velocity_Field_Denoising_for_Weather-Robust_LiDAR_Place_CVPR_2026_paper.pdf" class="publication-link"><i class="fas fa-file-pdf"></i> 论文PDF</a>
+            <a href="https://ustc-spin.github.io/CLaV/" class="publication-link"><i class="fab fa-github"></i> 代码</a>
+          </div>
+          <div class="publication-info">
+            <div class="publication-tags">
+              <span class="publication-tag">LiDAR Place Recognition</span>
+              <span class="publication-tag">Weather Robustness</span>
+              <span class="publication-tag">Latent Denoising</span>
+            </div>
+            <div class="publication-metrics">
+              <div class="metric">
+                <i class="fas fa-quote-right"></i>
+                <span class="citation-count">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="publications-year">
         <div class="year-heading">
           <h2>2025</h2>

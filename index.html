@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SPIN Lab - 官方网站</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260618b">
   <!-- Font Awesome 图标库 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- 谷歌字体 -->
@@ -82,6 +82,16 @@
             <img src="images/shiyanshi1.jpg" alt="团队合作">
           </div>
         </div>
+        <div class="slide">
+          <div class="slide-content">
+            <h2>实验室风采</h2>
+            <p>SPIN Lab 团队凝聚了一批朝气蓬勃、富有创新精神的青年研究者。我们在浓厚的学术氛围中协作攻关，在空间智能与具身智能的前沿探索中并肩前行，共同书写属于实验室的精彩篇章。</p>
+            <a href="about.html" class="btn">认识我们</a>
+          </div>
+          <div class="slide-image">
+            <img src="images/0605.jpg" alt="实验室风采">
+          </div>
+        </div>
         <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
         <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
       </div>
@@ -89,6 +99,7 @@
         <span class="control active" data-slide="0"></span>
         <span class="control" data-slide="1"></span>
         <span class="control" data-slide="2"></span>
+        <span class="control" data-slide="3"></span>
       </div>
     </div>
   </section>
@@ -98,6 +109,22 @@
     <div class="container">
       <h2 class="section-title">最新动态</h2>
       <div class="news-grid">
+
+        <div class="news-item">
+          <div class="news-image">
+            <img src="images/clav-fig2.png" alt="C-LaV 架构图">
+            <div class="news-date">
+              <span class="day">6月</span>
+              <span class="year">2026</span>
+            </div>
+          </div>
+          <div class="news-content">
+            <span class="badge">论文发表</span>
+            <h3>我们的论文C-LaV被CVPR 2026接收</h3>
+            <p>C-LaV：面向恶劣天气鲁棒激光雷达位置识别的条件隐速度场去噪方法</p>
+            <a href="https://ustc-spin.github.io/CLaV/" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
 
         <div class="news-item">
           <div class="news-image">
@@ -189,7 +216,7 @@
           </div>
           <div class="news-content">
             <span class="badge">重要通知</span>
-            <h3>我们的论文被CVPR 2024接收</h3>
+            <h3>我们的论文Text2Loc被CVPR 2024接收</h3>
             <p>恭喜团队成员在3D点云定位领域的研究成果被CVPR 2024会议接收！</p>
             <a href="publications.html" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
           </div>
@@ -197,7 +224,7 @@
 
       </div>
       <div class="view-all-container">
-        <a href="publications.html" class="btn btn-outline">查看全部新闻</a>
+        <button id="news-toggle" class="btn btn-outline" style="display: none;">查看全部新闻</button>
       </div>
     </div>
   </section>
@@ -257,6 +284,22 @@
         <div class="tab-content">
           <div class="tab-pane active" id="recent">
             <ul class="publication-list">
+              <li>
+                <div class="pub-info">
+                  <span class="pub-venue">CVPR 2026</span>
+                  <h4>C-LaV: Conditional Latent Velocity Field Denoising for Weather-Robust LiDAR Place Recognition</h4>
+                  <p class="pub-authors">Xuewei Cao, Jiayue Yang, Zhiwen Zeng, Yanyong Zhang, Yan Xia†</p>
+                  <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Cao_C-LaV_Conditional_Latent_Velocity_Field_Denoising_for_Weather-Robust_LiDAR_Place_CVPR_2026_paper.pdf" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="https://ustc-spin.github.io/CLaV/" class="pub-link"><i class="fab fa-github"></i> 代码</a>
+                    <a href="https://ustc-spin.github.io/CLaV/" class="pub-link"><i class="fas fa-external-link-alt"></i> 项目主页</a>
+                  </div>
+                </div>
+                <div class="pub-tags">
+                  <span class="tag">LiDAR Place Recognition</span>
+                  <span class="tag">Weather Robustness</span>
+                </div>
+              </li>
               <li>
                 <div class="pub-info">
                   <span class="pub-venue">IJCV 2025</span>
@@ -330,6 +373,22 @@
           </div>
           <div class="tab-pane" id="top">
             <ul class="publication-list">
+              <li>
+                <div class="pub-info">
+                  <span class="pub-venue">CVPR 2026</span>
+                  <h4>C-LaV: Conditional Latent Velocity Field Denoising for Weather-Robust LiDAR Place Recognition</h4>
+                  <p class="pub-authors">Xuewei Cao, Jiayue Yang, Zhiwen Zeng, Yanyong Zhang, Yan Xia†</p>
+                  <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Cao_C-LaV_Conditional_Latent_Velocity_Field_Denoising_for_Weather-Robust_LiDAR_Place_CVPR_2026_paper.pdf" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="https://ustc-spin.github.io/CLaV/" class="pub-link"><i class="fab fa-github"></i> 代码</a>
+                    <a href="https://ustc-spin.github.io/CLaV/" class="pub-link"><i class="fas fa-external-link-alt"></i> 项目主页</a>
+                  </div>
+                </div>
+                <div class="pub-tags">
+                  <span class="tag">LiDAR Place Recognition</span>
+                  <span class="tag">Weather Robustness</span>
+                </div>
+              </li>
               <li>
                 <div class="pub-info">
                   <span class="pub-venue">CVPR 2025</span>
@@ -535,7 +594,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=20260618b"></script>
 </body>
 
 </html>
