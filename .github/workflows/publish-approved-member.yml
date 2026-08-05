@@ -1,0 +1,121 @@
+name: 审核并发布实验室成员
+
+on:
+  issues:
+    types:
+      - opened
+      - labeled
+
+permissions:
+  contents: read
+
+jobs:
+  initialize-labels:
+    name: 初始化成员申请标签
+    if: github.event.action == 'opened' && startsWith(github.event.issue.title, '[成员申请]')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: 创建并添加工作流标签
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          if ! gh api "repos/${GH_REPO}/labels/member-application" >/dev/null 2>&1; then
+            gh api --method POST "repos/${GH_REPO}/labels" \
+              -f name='member-application' \
+              -f color='0969DA' \
+              -f description='实验室成员公开信息申请' >/dev/null
+          fi
+
+          if ! gh api "repos/${GH_REPO}/labels/member-approved" >/dev/null 2>&1; then
+            gh api --method POST "repos/${GH_REPO}/labels" \
+              -f name='member-approved' \
+              -f color='1A7F37' \
+              -f description='管理员已核准，可发布到团队页面' >/dev/null
+          fi
+
+          gh issue edit "${ISSUE_NUMBER}" --add-label 'member-application'
+          gh issue comment "${ISSUE_NUMBER}" --body \
+            '申请已登记。管理员核对资料后会添加 `member-approved` 标签，随后系统将自动更新团队页面。'
+
+  publish-member:
+    name: 发布审核通过的成员
+    if: >-
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'member-approved' &&
+      startsWith(github.event.issue.title, '[成员申请]')
+    runs-on: ubuntu-latest
+    concurrency:
+      group: member-publishing-${{ github.repository_id }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      issues: write
+      pages: write
+    steps:
+      - name: 检出默认分支
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: 验证申请并更新团队页面
+        id: update
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python3 scripts/add_member_from_issue.py
+          if git diff --quiet -- team.html; then
+            echo 'changed=false' >> "${GITHUB_OUTPUT}"
+          else
+            echo 'changed=true' >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: 提交并推送成员信息
+        if: steps.update.outputs.changed == 'true'
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- team.html
+          git commit -m "新增实验室成员（申请 #${ISSUE_NUMBER}）"
+          git pull --rebase origin "${DEFAULT_BRANCH}"
+          git push origin "HEAD:${DEFAULT_BRANCH}"
+
+      - name: 请求 GitHub Pages 重新构建
+        if: steps.update.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: gh api --method POST "repos/${GH_REPO}/pages/builds" >/dev/null
+
+      - name: 完成申请
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          CHANGED: ${{ steps.update.outputs.changed }}
+        run: |
+          if [ "${CHANGED}" = 'true' ]; then
+            MESSAGE='审核已通过，成员信息已加入团队页面，并已请求 GitHub Pages 重新部署。'
+          else
+            MESSAGE='该申请此前已经发布，无需重复更新团队页面。'
+          fi
+          gh issue comment "${ISSUE_NUMBER}" --body "${MESSAGE}"
+          gh issue close "${ISSUE_NUMBER}" --reason completed
+
+      - name: 报告发布失败
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh issue comment "${ISSUE_NUMBER}" --body \
+            "自动发布失败，请管理员查看 [Actions 运行记录](${RUN_URL})。修正申请后，可移除再重新添加 \`member-approved\` 标签以重试。"
