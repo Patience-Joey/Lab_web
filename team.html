@@ -80,17 +80,62 @@
       margin-top: 50px;
     }
 
-    /* 教师团队居中显示 */
-    .team-category:first-of-type .team-grid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
+    /* 教师团队使用横向宽卡片，给长简介留出更舒适的阅读宽度 */
+    .faculty-team .team-grid {
+      display: block;
+      width: 100%;
+      max-width: none;
+      margin: 50px auto 0;
     }
 
-    .team-category:first-of-type .team-card {
-      max-width: 400px;
+    .faculty-card {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      align-items: center;
       width: 100%;
+      max-width: none;
+    }
+
+    .faculty-card .member-photo {
+      height: 420px;
+      min-height: 420px;
+      margin-top: 0;
+      padding: 40px 30px;
+    }
+
+    .faculty-card .member-photo img {
+      width: 230px;
+      height: 320px;
+    }
+
+    .faculty-card .member-info {
+      padding: 45px 55px 40px;
+    }
+
+    .faculty-card .member-info h3 {
+      margin-bottom: 8px;
+      font-size: 1.6rem;
+    }
+
+    .faculty-card .member-position {
+      margin-bottom: 22px;
+      font-size: 1rem;
+    }
+
+    .faculty-card .member-short-bio {
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    .faculty-card .member-links {
+      gap: 20px;
+      font-size: 1.05rem;
+    }
+
+    .faculty-card + .faculty-card {
+      margin-top: 40px;
     }
 
 
@@ -182,6 +227,16 @@
       margin: 0 auto 30px;
     }
 
+    .footer .footer-maintenance-link {
+      margin-left: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85em;
+    }
+
+    .footer .footer-maintenance-link:hover {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
     @media (max-width: 768px) {
       .team-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -189,6 +244,35 @@
 
       .member-photo {
         height: 250px;
+      }
+
+      .faculty-team .team-grid {
+        max-width: 560px;
+      }
+
+      .faculty-card {
+        display: block;
+      }
+
+      .faculty-card .member-photo {
+        height: 300px;
+        min-height: 0;
+        padding: 25px;
+      }
+
+      .faculty-card .member-photo img {
+        width: 210px;
+        height: 260px;
+      }
+
+      .faculty-card .member-info {
+        padding: 24px;
+      }
+
+      .faculty-card .member-short-bio {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        text-align: left;
       }
     }
   </style>
@@ -226,7 +310,7 @@
   </header>
 
   <!-- 教师团队 -->
-  <section class="team-category" style="padding-top: 100px;">
+  <section class="team-category faculty-team" style="padding-top: 100px;">
     <div class="container">
       <div class="category-title">
         <h2>教师团队</h2>
@@ -234,7 +318,7 @@
 
       <div class="team-grid">
         <!-- 教师1 -->
-        <div class="team-card">
+        <div class="team-card faculty-card">
           <div class="member-photo">
             <img src="images/xiayan.png" alt="夏彦">
           </div>
@@ -292,6 +376,7 @@
           </div>
         </div> -->
 
+        <!-- AUTO-MEMBERS:FACULTY -->
       </div>
     </div>
   </section>
@@ -379,8 +464,7 @@
           </div>
         </div>
 
-
-
+        <!-- AUTO-MEMBERS:GRADUATE -->
       </div>
     </div>
   </section>
@@ -418,24 +502,6 @@
         <!-- 本科生2 -->
         <div class="team-card">
           <div class="member-photo">
-            <img src="images/zhang_chengxuan.jpg" alt="张辰炫">
-          </div>
-          <div class="member-info">
-            <h3>张辰炫</h3>
-            <div class="member-position">本科生</div>
-            <div class="member-short-bio">
-              张辰炫，中科大少年班学院在读本科生。
-            </div>
-            <div class="member-links">
-              <a href="mailto:zhang_cx@mail.ustc.edu.cn"><i class="fas fa-envelope"></i></a>
-              <a href="https://github.com/ZhangUSTC-EmbodiedAI"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 本科生3 -->
-        <div class="team-card">
-          <div class="member-photo">
             <img src="images/lizihao.png" alt="李梓豪">
           </div>
           <div class="member-info">
@@ -450,6 +516,8 @@
             </div>
           </div>
         </div>
+
+        <!-- AUTO-MEMBERS:UNDERGRADUATE -->
       </div>
     </div>
   </section>
@@ -500,7 +568,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 SPIN Lab. 保留所有权利.</p>
+        <p>&copy; 2025 SPIN Lab. 保留所有权利.<a class="footer-maintenance-link" href="member-submit.html">成员资料维护</a></p>
       </div>
     </div>
   </footer>

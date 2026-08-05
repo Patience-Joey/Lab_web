@@ -1,0 +1,88 @@
+name: 实验室成员信息登记
+description: 已加入 SPIN Lab 的成员在此提交公开展示资料
+title: "[成员申请] "
+labels:
+  - member-application
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢加入 SPIN Lab！请填写希望展示在实验室官网上的资料。
+
+        提交后请等待管理员审核。所有内容都会公开，请勿填写手机号、身份证号、住址等隐私信息。
+
+  - type: input
+    id: name
+    attributes:
+      label: 姓名
+      description: 请填写真实姓名，与实验室登记信息一致。
+      placeholder: 例如：张三
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: 成员类别
+      description: 请选择当前在实验室的身份。
+      options:
+        - 教师
+        - 博士研究生
+        - 硕士研究生
+        - 本科生
+    validations:
+      required: true
+
+  - type: textarea
+    id: bio
+    attributes:
+      label: 个人简介
+      description: 建议 100–300 字，介绍院系、年级和研究方向；请使用第三人称。
+      placeholder: 张三，中国科学技术大学……，主要研究方向为……
+    validations:
+      required: true
+
+  - type: textarea
+    id: photo
+    attributes:
+      label: 头像
+      description: 请把清晰的正面照片拖入或粘贴到此输入框，等待 GitHub 显示图片预览后再提交。
+      placeholder: 将 JPG、PNG 或 WebP 图片拖到这里
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: 公开邮箱
+      description: 可选；填写后会公开展示。
+      placeholder: name@mail.ustc.edu.cn
+
+  - type: input
+    id: homepage
+    attributes:
+      label: 个人主页
+      description: 可选；请填写完整的 http 或 https 地址。
+      placeholder: https://example.com
+
+  - type: input
+    id: github
+    attributes:
+      label: GitHub 主页
+      description: 可选；请填写完整的 GitHub 个人主页地址。
+      placeholder: https://github.com/username
+
+  - type: input
+    id: scholar
+    attributes:
+      label: Google Scholar
+      description: 可选；请填写完整的 Google Scholar 主页地址。
+      placeholder: https://scholar.google.com/citations?user=...
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 公开展示确认
+      options:
+        - label: 我确认以上资料准确，并同意将所填信息及头像公开展示在 SPIN Lab 网站和 GitHub 仓库中。
+          required: true
