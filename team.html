@@ -80,6 +80,40 @@
       margin-top: 50px;
     }
 
+    /* 研究生成员在桌面端每行展示 5 人 */
+    .graduate-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .graduate-grid .team-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .graduate-grid .member-photo {
+      height: 220px;
+    }
+
+    .graduate-grid .member-photo img.portrait-crop {
+      width: 165px;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .graduate-grid .member-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px;
+    }
+
+    .graduate-grid .member-links {
+      margin-top: auto;
+    }
+
     /* 教师团队使用横向宽卡片，给长简介留出更舒适的阅读宽度 */
     .faculty-team .team-grid {
       display: block;
@@ -237,9 +271,26 @@
       color: rgba(255, 255, 255, 0.85);
     }
 
+    @media (max-width: 1200px) {
+      .graduate-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 992px) {
+      .graduate-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 768px) {
       .team-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+
+      .graduate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
       }
 
       .member-photo {
@@ -273,6 +324,12 @@
         font-size: 0.95rem;
         line-height: 1.8;
         text-align: left;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .graduate-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -391,11 +448,11 @@
         <!-- <p>123</p> -->
       </div>
 
-      <div class="team-grid">
+      <div class="team-grid graduate-grid">
         <!-- 研究生1 -->
         <div class="team-card">
           <div class="member-photo">
-            <img src="images/caoxuewei.jpg" alt="曹学伟">
+            <img class="portrait-crop" src="images/caoxuewei.jpg" alt="曹学伟">
           </div>
           <div class="member-info">
             <h3>曹学伟</h3>
@@ -424,6 +481,36 @@
             <div class="member-links">
               <a href="https://github.com/Yuhan321"><i class="fas fa-envelope"></i></a>
               <a href="https://github.com/Yuhan321"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card" data-member-issue="2">
+          <div class="member-photo">
+            <img src="https://github.com/user-attachments/assets/268f5702-35e9-4c1d-a725-032d77d6a2dc" alt="黄非凡" loading="lazy">
+          </div>
+          <div class="member-info">
+            <h3>黄非凡</h3>
+            <div class="member-position">博士研究生</div>
+            <div class="member-short-bio">
+              黄非凡，中国科学技术大学人工智能与数据科学学院2026级博士生，主要研究机器人移动抓取与移动操作，包括三维视觉感知、物体几何理解、抓取姿态估计与具身智能。
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card" data-member-issue="4">
+          <div class="member-photo">
+            <img src="https://github.com/user-attachments/assets/38a444a9-5b1e-4018-8296-444a1cf280a9" alt="宋沙清" loading="lazy">
+          </div>
+          <div class="member-info">
+            <h3>宋沙清</h3>
+            <div class="member-position">博士研究生</div>
+            <div class="member-short-bio">
+              宋沙清，中国科学技术大学人工智能与数据科学学院26级博士研究生，主要研究方向为点云理解、空间推理、室外场景定位。
+            </div>
+            <div class="member-links">
+              <a href="mailto:shaqings@mail.ustc.edu.cn" aria-label="给宋沙清发送邮件"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/shaqings" target="_blank" rel="noopener noreferrer" aria-label="宋沙清的GitHub"><i class="fab fa-github"></i></a>
             </div>
           </div>
         </div>
@@ -464,36 +551,6 @@
           </div>
         </div>
 
-        <div class="team-card" data-member-issue="2">
-          <div class="member-photo">
-            <img src="https://github.com/user-attachments/assets/268f5702-35e9-4c1d-a725-032d77d6a2dc" alt="黄非凡" loading="lazy">
-          </div>
-          <div class="member-info">
-            <h3>黄非凡</h3>
-            <div class="member-position">博士研究生</div>
-            <div class="member-short-bio">
-              黄非凡，中国科学技术大学人工智能与数据科学学院2026级博士生。主要从事机器人移动抓取与移动操作研究，研究方向包括三维视觉感知、物体几何理解、抓取姿态估计、移动操作以及具身智能，关注感知、规划与控制协同优化，探索机器人在开放环境中的自主操作与泛化能力。
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card" data-member-issue="4">
-          <div class="member-photo">
-            <img src="https://github.com/user-attachments/assets/38a444a9-5b1e-4018-8296-444a1cf280a9" alt="宋沙清" loading="lazy">
-          </div>
-          <div class="member-info">
-            <h3>宋沙清</h3>
-            <div class="member-position">博士研究生</div>
-            <div class="member-short-bio">
-              宋沙清，中国科学技术大学人工智能与数据科学学院26级博士研究生，主要研究方向为点云理解、空间推理、室外场景定位。
-            </div>
-            <div class="member-links">
-              <a href="mailto:shaqings@mail.ustc.edu.cn" aria-label="给宋沙清发送邮件"><i class="fas fa-envelope"></i></a>
-              <a href="https://github.com/shaqings" target="_blank" rel="noopener noreferrer" aria-label="宋沙清的GitHub"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-
         <div class="team-card" data-member-issue="5">
           <div class="member-photo">
             <img src="https://github.com/user-attachments/assets/17de0040-ca2b-4274-866c-1121b2cc05eb" alt="曾志文" loading="lazy">
@@ -505,9 +562,26 @@
               曾志文，中科大智能科学与技术专业在读硕士研究生，研究方向为自动驾驶中的多模态融合感知与三维定位，涵盖BEV感知、跨模态定位，致力于提升自动驾驶场景的感知与定位鲁棒性。
             </div>
             <div class="member-links">
-              <a href="mailto:zwzengi@outlook.com" aria-label="给曾志文发送邮件"><i class="fas fa-envelope"></i></a>
+              <a href="mailto:zwzengi@mail.ustc.edu.cn" aria-label="给曾志文发送邮件"><i class="fas fa-envelope"></i></a>
               <a href="https://scholar.google.com/citations?hl=en&amp;oe=GB&amp;view_op=list_works&amp;gmla=AO4B3jtK-3MFMvDrdgkGx9zFFvL2lFxi-y4p8pQ76RsLue63VI7ks5WzUzeiMQA08EPJHk4VEggfX_4jmECX_fhJOkC2ylapeHHosm-zGR8&amp;user=BMUyVvEAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="曾志文的Google Scholar"><i class="fab fa-google"></i></a>
               <a href="https://github.com/King-Active/" target="_blank" rel="noopener noreferrer" aria-label="曾志文的GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="member-photo">
+            <img src="images/lizihao.png" alt="李梓豪">
+          </div>
+          <div class="member-info">
+            <h3>李梓豪</h3>
+            <div class="member-position">硕士研究生</div>
+            <div class="member-short-bio">
+              李梓豪，中科大在读硕士研究生。
+            </div>
+            <div class="member-links">
+              <a href="mailto:hzlizihao@mail.ustc.edu.cn"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/hzlizihao"><i class="fab fa-github"></i></a>
             </div>
           </div>
         </div>
@@ -541,26 +615,6 @@
             <div class="member-links">
               <a href="mailto:jiayueyang@mail.ustc.edu.cn"><i class="fas fa-envelope"></i></a>
               <a href="https://jryyangjy.github.io/"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- 本科生2 -->
-        <div class="team-card">
-          <div class="member-photo">
-            <img src="images/lizihao.png" alt="李梓豪">
-          </div>
-          <div class="member-info">
-            <h3>李梓豪</h3>
-            <div class="member-position">本科生</div>
-            <div class="member-short-bio">
-              李梓豪，中科大少年班学院在读本科生。
-            </div>
-            <div class="member-links">
-              <a href="mailto:hzlizihao@mail.ustc.edu.cn"><i class="fas fa-envelope"></i></a>
-              <a href="https://github.com/hzlizihao"><i class="fab fa-github"></i></a>
             </div>
           </div>
         </div>
