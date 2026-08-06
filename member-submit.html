@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SPIN Lab 新成员信息登记与审核入口">
+  <meta name="description" content="SPIN Lab 新成员信息登记入口">
   <title>成员信息登记 - SPIN Lab</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css?v=20260618b">
@@ -148,32 +148,6 @@
       color: var(--accent-color-alt);
     }
 
-    .admin-guide {
-      max-width: 920px;
-      margin: 28px auto 0;
-      padding: 24px 30px;
-      border-radius: 10px;
-      background: white;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    }
-
-    .admin-guide summary {
-      cursor: pointer;
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-
-    .admin-guide ol {
-      margin: 18px 0 0;
-      color: #485566;
-    }
-
-    .admin-guide code {
-      padding: 2px 6px;
-      border-radius: 4px;
-      background: #eef3f8;
-    }
-
     @media (max-width: 768px) {
       .submission-hero {
         padding: 125px 20px 50px;
@@ -232,7 +206,7 @@
     <section class="submission-hero">
       <div class="container">
         <h1>实验室成员信息登记</h1>
-        <p>本入口面向已经加入 SPIN Lab 的新成员。提交后需由实验室管理员审核，审核通过后信息才会发布到团队成员页面。</p>
+        <p>本入口面向已经加入 SPIN Lab 的新成员。提交资料后，相关信息将用于更新团队成员页面。</p>
       </div>
     </section>
 
@@ -240,7 +214,7 @@
       <div class="container">
         <div class="submission-panel">
           <h2>提交个人介绍</h2>
-          <p class="panel-intro">使用 GitHub 表单提交信息，可直接拖拽上传头像，并能完整记录审核过程。</p>
+          <p class="panel-intro">使用 GitHub 表单提交信息，可直接拖拽上传头像，并保留完整的资料记录。</p>
 
           <div class="workflow-steps">
             <article class="workflow-step">
@@ -255,8 +229,8 @@
             </article>
             <article class="workflow-step">
               <span class="step-number">3</span>
-              <h3>等待审核</h3>
-              <p>管理员核对后批准申请，网站会自动更新并重新部署。</p>
+              <h3>完成登记</h3>
+              <p>资料确认完成后，网站会自动更新成员介绍。</p>
             </article>
           </div>
 
@@ -284,15 +258,6 @@
           </div>
         </div>
 
-        <details class="admin-guide">
-          <summary>管理员审核说明</summary>
-          <ol>
-            <li>在 GitHub Issues 中核对申请人的身份、文字内容、头像和链接。</li>
-            <li>需要修改时直接请申请人在原 Issue 中编辑资料，不要先批准。</li>
-            <li>确认无误后添加 <code>member-approved</code> 标签。</li>
-            <li>自动化完成后会更新团队页面、触发 Pages 构建，并关闭该 Issue。</li>
-          </ol>
-        </details>
       </div>
     </section>
   </main>
@@ -315,7 +280,7 @@
         </div>
         <div class="footer-column">
           <h3>需要帮助？</h3>
-          <p>如无法使用 GitHub 提交，请联系实验室管理员协助登记。</p>
+          <p>如无法使用 GitHub 提交，请联系实验室协助登记。</p>
           <a href="team.html">返回团队页面</a>
         </div>
       </div>

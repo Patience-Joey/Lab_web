@@ -39,7 +39,7 @@ jobs:
 
           gh issue edit "${ISSUE_NUMBER}" --add-label 'member-application'
           gh issue comment "${ISSUE_NUMBER}" --body \
-            '申请已登记。管理员核对资料后会添加 `member-approved` 标签，随后系统将自动更新团队页面。'
+            '申请已登记，资料确认完成后系统将自动更新团队页面。'
 
   publish-member:
     name: 发布审核通过的成员
