@@ -17,7 +17,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 最新动态：最多展示6条，其余折叠
   initNewsFold();
+
+  // 远程头像不可用时显示成员姓名首字，避免出现空白头像。
+  initAvatarFallbacks();
 });
+
+function initAvatarFallbacks () {
+  document.querySelectorAll('.member-photo img').forEach(image => {
+    const showFallback = () => {
+      const photo = image.closest('.member-photo');
+      if (!photo || photo.querySelector('.avatar-fallback')) return;
+
+      const name = image.alt.trim();
+      const fallback = document.createElement('span');
+      fallback.className = 'avatar-fallback';
+      fallback.textContent = name ? name.slice(-1) : 'SPIN';
+      fallback.setAttribute('aria-hidden', 'true');
+      image.hidden = true;
+      photo.appendChild(fallback);
+    };
+
+    image.addEventListener('error', showFallback, { once: true });
+    if (image.complete && image.naturalWidth === 0) showFallback();
+  });
+}
 
 // 最新动态折叠功能
 function initNewsFold () {
@@ -205,7 +228,7 @@ function initMobileNav () {
     const navLinks = mainNav.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 640) {
           mainNav.classList.remove('active');
           menuToggle.querySelector('i').classList.add('fa-bars');
           menuToggle.querySelector('i').classList.remove('fa-times');
@@ -260,6 +283,7 @@ function initSmoothScroll () {
 document.addEventListener('DOMContentLoaded', function () {
   const searchBox = document.querySelector('.search-box input');
   const searchButton = document.querySelector('.search-box button');
+  if (!searchBox || !searchButton) return;
 
   // 搜索按钮点击事件
   searchButton.addEventListener('click', function () {
@@ -277,7 +301,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function performSearch () {
     const searchTerm = searchBox.value.trim().toLowerCase();
     if (searchTerm.length < 2) {
-      alert('请输入至少2个字符进行搜索');
+      const message = window.spinI18n
+        ? window.spinI18n.translate('请输入至少2个字符进行搜索')
+        : '请输入至少2个字符进行搜索';
+      alert(message);
       return;
     }
 
@@ -332,4 +359,4 @@ document.addEventListener('visibilitychange', function () {
       }, 15000); // 延长到15秒，提供更多阅读时间
     }
   }
-}); 
+});

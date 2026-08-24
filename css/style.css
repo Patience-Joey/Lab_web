@@ -40,6 +40,15 @@ body {
   background-color: var(--light-color);
 }
 
+/* Prevent the Chinese source markup from flashing before English is applied. */
+html.spin-i18n-pending {
+  background: var(--light-color);
+}
+
+html.spin-i18n-pending body {
+  visibility: hidden;
+}
+
 a {
   color: var(--primary-color);
   text-decoration: none;
@@ -1103,7 +1112,7 @@ ul {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   :root {
     --header-height: 60px;
     --section-spacing: 50px;
@@ -1308,5 +1317,597 @@ ul {
     font-size: 0.9rem;
     letter-spacing: 0.05px;
     line-height: 1.1;
+  }
+}
+
+/* 2026 visual refresh: retain the SPIN blue identity with a lighter academic style */
+:root {
+  --primary-color: #0867d1;
+  --secondary-color: #14213d;
+  --accent-color: #0d8bd9;
+  --light-gray: #f6f8fc;
+  --mid-gray: #dbe3ef;
+  --dark-gray: #5d6b82;
+  --container-width: 1280px;
+  --header-height: 78px;
+  --card-radius: 18px;
+  --section-spacing: 96px;
+  --soft-shadow: 0 12px 36px rgba(27, 57, 106, 0.08);
+  --hover-shadow: 0 20px 48px rgba(27, 57, 106, 0.14);
+}
+
+html {
+  background: #f7f9fd;
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 4%, rgba(8, 103, 209, 0.055), transparent 28rem),
+    var(--light-color);
+  color: #23314d;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.lang-en {
+  --heading-font: Inter, 'Noto Sans SC', Arial, sans-serif;
+  --body-font: Inter, 'Noto Sans SC', Arial, sans-serif;
+}
+
+.container {
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(132, 151, 181, 0.15);
+  box-shadow: 0 4px 24px rgba(35, 58, 98, 0.06);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.logo h1 {
+  font-size: clamp(1.15rem, 1.75vw, 1.58rem);
+  letter-spacing: -0.02em;
+}
+
+.main-nav li {
+  margin-left: 24px;
+}
+
+.main-nav a {
+  color: #263752;
+  font-size: 0.96rem;
+  letter-spacing: 0.01em;
+}
+
+.main-nav a::after {
+  bottom: 5px;
+  height: 2px;
+  border-radius: 99px;
+}
+
+.search-box {
+  margin-left: 18px;
+}
+
+.search-box input {
+  width: 126px;
+  padding: 9px 12px;
+  border-color: #dce4f0;
+  background: rgba(247, 249, 253, 0.85);
+  border-radius: 10px 0 0 10px;
+  outline: none;
+}
+
+.search-box input:focus {
+  width: 160px;
+  border-color: rgba(8, 103, 209, 0.52);
+  box-shadow: 0 0 0 3px rgba(8, 103, 209, 0.09);
+}
+
+.search-box button {
+  border-radius: 0 10px 10px 0;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 72px;
+  margin-left: 18px;
+  padding: 7px 10px;
+  border: 1px solid #dce4f0;
+  border-radius: 999px;
+  background: rgba(247, 249, 253, 0.92);
+  color: #8996aa;
+  font: 600 0.78rem/1 var(--body-font);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.language-switcher:hover {
+  border-color: rgba(8, 103, 209, 0.45);
+  box-shadow: 0 6px 18px rgba(8, 103, 209, 0.1);
+  transform: translateY(-1px);
+}
+
+.language-switcher [data-lang] {
+  transition: color 0.2s ease;
+}
+
+.language-switcher [data-lang].active {
+  color: var(--primary-color);
+}
+
+.language-divider {
+  color: #bdc6d4;
+  font-weight: 400;
+}
+
+.btn {
+  padding: 0.78rem 1.65rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(8, 103, 209, 0.16);
+}
+
+.btn:hover {
+  background-color: #0758b2;
+  box-shadow: 0 12px 28px rgba(8, 103, 209, 0.24);
+}
+
+.section-title,
+.category-title h2 {
+  color: #15233d;
+  font-size: clamp(1.85rem, 3vw, 2.45rem);
+  letter-spacing: -0.025em;
+}
+
+.section-title::after,
+.category-title h2::after {
+  width: 54px !important;
+  height: 4px !important;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--primary-color), #42a6ed) !important;
+}
+
+.hero {
+  padding: 126px 0 58px;
+  background: linear-gradient(145deg, #f4f8ff 0%, #ffffff 52%, #f5f9ff 100%);
+}
+
+.hero-slider {
+  height: 560px;
+  overflow: hidden;
+  border: 1px solid rgba(121, 149, 190, 0.14);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 65px rgba(34, 66, 116, 0.12);
+}
+
+.slide-content {
+  max-width: 560px;
+  padding: 44px 56px;
+}
+
+.slide-content h2 {
+  color: #102447;
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  letter-spacing: -0.035em;
+}
+
+.slide-content p {
+  color: #56647a;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.slide-image img {
+  transition: transform 0.7s ease;
+}
+
+.hero-slider:hover .slide.active .slide-image img {
+  transform: scale(1.025);
+}
+
+.latest-news,
+.research-areas,
+.publications-highlight,
+.team-preview,
+.team-category,
+.mission-vision,
+.lab-resources {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+}
+
+.news-grid,
+.areas-grid {
+  gap: 28px;
+}
+
+.news-item,
+.area-card,
+.publication-list li,
+.contact-card,
+.resource-card,
+.vision-card,
+.position-card,
+.requirement-card,
+.submission-panel {
+  border: 1px solid rgba(128, 151, 186, 0.13);
+  border-radius: var(--card-radius);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--soft-shadow);
+}
+
+.news-item:hover,
+.area-card:hover,
+.publication-list li:hover,
+.resource-card:hover,
+.vision-card:hover,
+.position-card:hover,
+.requirement-card:hover {
+  border-color: rgba(8, 103, 209, 0.2);
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-6px);
+}
+
+.news-image {
+  overflow: hidden;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+.news-content,
+.area-card {
+  padding: 28px;
+}
+
+.badge,
+.tag {
+  border-radius: 999px;
+}
+
+/* People page, inspired by the clean circular portrait treatment on CV4DT. */
+.team-category .team-grid {
+  row-gap: 54px !important;
+}
+
+.team-category .team-card,
+.team-preview .team-member {
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: center;
+}
+
+.team-category .team-card:hover,
+.team-preview .team-member:hover {
+  box-shadow: none !important;
+  transform: translateY(-5px) !important;
+}
+
+.team-category .member-photo,
+.team-preview .member-photo {
+  width: 176px !important;
+  height: 176px !important;
+  min-height: 176px !important;
+  margin: 0 auto 20px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 5px solid #ffffff;
+  border-radius: 50% !important;
+  background: #eef3fa !important;
+  box-shadow: 0 14px 38px rgba(40, 65, 107, 0.16);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-category .team-card:hover .member-photo,
+.team-preview .team-member:hover .member-photo {
+  box-shadow: 0 18px 44px rgba(8, 103, 209, 0.2);
+  transform: translateY(-3px);
+}
+
+.team-category .member-photo img,
+.team-category .member-photo img.portrait-crop,
+.team-preview .member-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+/* Portraits with a taller source ratio need breathing room inside the circle. */
+.team-category .member-photo img.avatar-contain,
+.team-preview .member-photo img.avatar-contain,
+.faculty-team .member-photo img.avatar-contain {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #ffffff;
+}
+
+.avatar-fallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  background: linear-gradient(145deg, #e7f1ff, #f7faff);
+  color: var(--primary-color);
+  font-size: 2.4rem;
+  font-weight: 750;
+}
+
+.team-category .member-info,
+.team-preview .member-info {
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px !important;
+}
+
+.team-category .member-info h3,
+.team-preview .member-info h3 {
+  margin-bottom: 5px;
+  color: #172640;
+  font-size: 1.15rem;
+}
+
+.team-category .member-position,
+.team-preview .member-position {
+  margin-bottom: 12px;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+}
+
+.team-category .member-short-bio,
+.team-preview .member-short-bio {
+  color: #637087;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  text-align: center !important;
+}
+
+.team-category .member-links,
+.team-preview .member-links {
+  justify-content: center;
+  margin-top: auto;
+}
+
+.team-category .member-links a,
+.team-preview .member-links a {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf3fb;
+  color: #637087;
+}
+
+.team-category .member-links a:hover,
+.team-preview .member-links a:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.faculty-team .faculty-card {
+  display: grid !important;
+  grid-template-columns: 240px minmax(0, 1fr) !important;
+  align-items: center;
+  padding: 38px 44px;
+  border: 1px solid rgba(128, 151, 186, 0.13) !important;
+  border-radius: 24px !important;
+  background: #ffffff !important;
+  box-shadow: var(--soft-shadow) !important;
+  text-align: left;
+}
+
+.faculty-team .faculty-card .member-photo {
+  width: 206px !important;
+  height: 206px !important;
+  min-height: 206px !important;
+  margin: 0 !important;
+}
+
+.faculty-team .faculty-card .member-info {
+  align-items: flex-start;
+  padding: 0 0 0 34px !important;
+}
+
+.faculty-team .faculty-card .member-short-bio {
+  text-align: left !important;
+}
+
+.join-us {
+  margin-top: 60px;
+  background: linear-gradient(135deg, #eef5ff, #f9fbff);
+}
+
+.footer {
+  background: linear-gradient(145deg, #10203c, #142b50);
+}
+
+.footer-content {
+  gap: 54px;
+}
+
+.footer-column h3::after {
+  width: 30px;
+  border-radius: 99px;
+  background: #69b3ff;
+}
+
+@media (max-width: 1180px) {
+  .main-nav li {
+    margin-left: 17px;
+  }
+
+  .search-box {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .faculty-team .faculty-card {
+    grid-template-columns: 190px minmax(0, 1fr) !important;
+    padding: 30px;
+  }
+
+  .faculty-team .faculty-card .member-photo {
+    width: 170px !important;
+    height: 170px !important;
+    min-height: 170px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-height: 66px;
+    --section-spacing: 64px;
+  }
+
+  .container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .nav-right {
+    margin-left: auto;
+    margin-right: 14px;
+  }
+
+  .language-switcher {
+    min-width: 64px;
+    margin-left: 0;
+    padding: 7px 9px;
+  }
+
+  .hero {
+    padding-top: 92px;
+  }
+
+  .hero-slider {
+    height: 570px;
+    border-radius: 22px;
+  }
+
+  .hero-slider .slide {
+    min-height: 570px;
+    padding: 18px 0;
+  }
+
+  .slide-content {
+    margin-bottom: 0;
+    padding: 34px 22px 26px;
+  }
+
+  .slide-content p {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 0.96rem;
+    line-height: 1.75;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 11;
+  }
+
+  .slide-image {
+    display: none;
+  }
+
+  .faculty-team .faculty-card {
+    display: flex !important;
+    flex-direction: column;
+    padding: 30px 22px;
+    text-align: center;
+  }
+
+  .faculty-team .faculty-card .member-photo {
+    margin: 0 auto 22px !important;
+  }
+
+  .faculty-team .faculty-card .member-info {
+    align-items: center;
+    padding: 0 !important;
+  }
+
+  .faculty-team .faculty-card .member-short-bio {
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .header .container {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .logo {
+    max-width: 185px;
+  }
+
+  .logo h1,
+  body.lang-en .logo h1 {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .main-nav li {
+    margin-left: 9px;
+  }
+
+  .main-nav a {
+    font-size: 0.78rem;
+  }
+
+  .language-switcher {
+    min-width: 58px;
+    margin-left: 10px;
+    padding: 6px 8px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faculty-team .faculty-card {
+    align-items: start !important;
+  }
+
+  .hero-slider .slide-content {
+    padding: 34px 28px;
+  }
+
+  .hero-slider .slide-content p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 9;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo h1 {
+    max-width: 205px;
+    font-size: 0.98rem;
+  }
+
+  body.lang-en .logo h1 {
+    max-width: 190px;
+    font-size: 0.88rem;
+  }
+
+  .team-category .member-photo,
+  .team-preview .member-photo {
+    width: 164px !important;
+    height: 164px !important;
+    min-height: 164px !important;
   }
 }
