@@ -146,7 +146,7 @@ class MemberConsistencyTests(unittest.TestCase):
         self.assertIn(f"'{source}': '{translation}'", i18n)
 
     def test_xuewei_cao_profile_is_consistent_in_chinese_and_english(self):
-        source = "曹学伟，中国科学技术大学智能科学与技术专业博士研究生，现为剑桥大学访问博士生，研究方向为空间智能、三维计算机视觉与自动驾驶。"
+        source = "曹学伟，中国科学技术大学智能科学与技术专业博士研究生，剑桥大学访问博士生，研究方向为空间智能、三维计算机视觉与自动驾驶。"
         translation = "Xuewei Cao is a PhD student in Intelligent Science and Technology at USTC and a visiting PhD student at the University of Cambridge. His research focuses on spatial intelligence, 3D computer vision, and autonomous driving."
         research = "研究方向：空间智能、三维计算机视觉、自动驾驶"
         team = (ROOT / "team.html").read_text(encoding="utf-8")
