@@ -52,6 +52,8 @@
     '阅读更多': 'Read More',
     '查看全部新闻': 'View All News',
     '收起': 'Collapse',
+    '团队负责人夏彦教授、博士研究生曹学伟受邀在剑桥大学CV4DT研究组作报告': 'Prof. Yan Xia and PhD Student Xuewei Cao Give Invited Talk at Cambridge CV4DT Research Group',
+    '分享团队提出的恶劣天气激光雷达场景识别定位方法（CVPR 2026论文C-LaV）': "Sharing the team's localization method for LiDAR place recognition in adverse weather, from our CVPR 2026 paper C-LaV.",
     '我组联合组织ECCV 2026 TwinWorld专题研讨会': 'SPIN Lab Co-organizes TwinWorld at ECCV 2026',
     '研讨会聚焦面向建成环境数字孪生的视觉智能，将于2026年9月8日在瑞典马尔默举行': 'The workshop focuses on visual intelligence for built-environment digital twins and will take place on 8 September 2026 in Malmö, Sweden.',
     '我们的论文Text2Loc++被TPAMI 2026接收': 'Text2Loc++ Accepted by TPAMI 2026',
