@@ -70,6 +70,8 @@
     'TARGO：面向遮挡场景下目标驱动机器人抓取的基准测试': 'TARGO: Benchmarking target-driven robotic grasping under occlusions.',
     '举办ICCV Workshop专题研讨会': 'ICCV Workshop on Multimodal Localization and Mapping',
     '此次研讨会主题为"Multi-modal Localization and Mapping (MuLMa)"': 'The workshop focuses on Multi-modal Localization and Mapping (MuLMa).',
+    '我们的论文TrafficLoc被ICCV 2025接收': 'TrafficLoc Accepted by ICCV 2025',
+    'TrafficLoc：基于几何引导跨模态匹配的交通监控相机三维场景定位方法': 'TrafficLoc: Localizing traffic surveillance cameras in 3D scenes via geometry-guided cross-modal matching.',
     '我们的论文被CVPR 2025接收': 'Our Paper Accepted by CVPR 2025',
     '恭喜团队成员在协同目标检测领域的研究成果被CVPR 2025会议接收！': 'Our work on cooperative object detection was accepted by CVPR 2025.',
     '我们的论文Text2Loc被CVPR 2024接收': 'Text2Loc Accepted by CVPR 2024',
