@@ -52,6 +52,8 @@
     '阅读更多': 'Read More',
     '查看全部新闻': 'View All News',
     '收起': 'Collapse',
+    '我组联合组织ECCV 2026 TwinWorld专题研讨会': 'SPIN Lab Co-organizes TwinWorld at ECCV 2026',
+    '研讨会聚焦面向建成环境数字孪生的视觉智能，将于2026年9月8日在瑞典马尔默举行': 'The workshop focuses on visual intelligence for built-environment digital twins and will take place on 8 September 2026 in Malmö, Sweden.',
     '我们的论文Text2Loc++被TPAMI 2026接收': 'Text2Loc++ Accepted by TPAMI 2026',
     'Text2Loc++：面向自然语言描述的可泛化三维点云定位': 'Text2Loc++: Generalizable 3D point-cloud localization from natural-language descriptions.',
     '我们的论文SemCityLoc被ECCV 2026接收': 'SemCityLoc Accepted by ECCV 2026',

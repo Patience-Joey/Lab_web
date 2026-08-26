@@ -35,6 +35,7 @@ class RecentPublicationTests(unittest.TestCase):
 
     def test_homepage_news_has_english_translations(self):
         expected = {
+            "我组联合组织ECCV 2026 TwinWorld专题研讨会": "SPIN Lab Co-organizes TwinWorld at ECCV 2026",
             "我们的论文Text2Loc++被TPAMI 2026接收": "Text2Loc++ Accepted by TPAMI 2026",
             "我们的论文SemCityLoc被ECCV 2026接收": "SemCityLoc Accepted by ECCV 2026",
         }
@@ -42,6 +43,12 @@ class RecentPublicationTests(unittest.TestCase):
             with self.subTest(chinese=chinese):
                 self.assertIn(chinese, self.home)
                 self.assertIn(f"'{chinese}': '{english}'", self.i18n)
+
+    def test_twinworld_workshop_news_has_official_metadata(self):
+        self.assertIn("我组联合组织ECCV 2026 TwinWorld专题研讨会", self.home)
+        self.assertIn("2026年9月8日在瑞典马尔默举行", self.home)
+        self.assertIn("https://twin-world.github.io/", self.home)
+        self.assertIn("https://twin-world.github.io/assets/logo/icon-dark.png", self.home)
 
 
 if __name__ == "__main__":
