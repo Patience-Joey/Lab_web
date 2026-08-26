@@ -146,7 +146,7 @@
     '陈炫伊，中国科学技术大学智能科学与技术专业硕士研究生，主要研究具身智能与智能机器人，重点关注复杂室外环境中的智能感知、三维空间理解与自主决策。': 'Xuanyi Chen is a master’s student at USTC studying embodied AI, intelligent robotics, 3D understanding, and autonomous decision-making in complex outdoor environments.',
     '李思澄，中国科学技术大学人工智能与数据科学学院2026届硕士研究生，主要研究基于强化学习和模仿学习的机器人智能控制。': 'Sicheng Li is a master’s student at USTC studying intelligent robot control through reinforcement and imitation learning.',
     '邓一诚，中国科学技术大学，研究方向为具身智能': 'Yicheng Deng studies embodied intelligence at USTC.',
-    '杨家越，中国科学技术大学计算机科学与技术专业本科生，现于剑桥大学开展访问研究。主要研究方向包括三维与四维计算机视觉。': 'Jiayue Yang is an undergraduate student in Computer Science and Technology at USTC and is currently conducting visiting research at the University of Cambridge. His research focuses on 3D and 4D computer vision.',
+    '杨家越，中国科学技术大学计算机科学与技术专业本科生，现于剑桥大学开展访问研究。主要研究方向包括三维、四维计算机视觉与空间智能。': 'Jiayue Yang is an undergraduate student in Computer Science and Technology at USTC and is currently conducting visiting research at the University of Cambridge. His research focuses on 3D and 4D computer vision and spatial intelligence.',
     '宋涵亮，中科大人工智能与数据科学学院在读本科生。': 'Hanliang Song is an undergraduate at USTC’s School of Artificial Intelligence and Data Science.',
     '刘心语，中国科学技术大学数据科学专业的大三本科生，现阶段主要关注 manipulation 与 3D 视觉方向。她对具身智能相关问题有较强的兴趣，希望在实验室中进一步积累研究与实践经验，并持续提升在感知、建模与算法实现方面的能力。': 'Xinyu Liu is a junior undergraduate in Data Science at USTC, interested in manipulation, 3D vision, and embodied intelligence.',
     '加入我们': 'Join Us',

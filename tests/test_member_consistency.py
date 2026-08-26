@@ -137,8 +137,8 @@ class MemberConsistencyTests(unittest.TestCase):
         self.assertNotIn("德国国家人工智能中心", combined)
 
     def test_jiayue_yang_updated_bio_has_english_translation(self):
-        source = "杨家越，中国科学技术大学计算机科学与技术专业本科生，现于剑桥大学开展访问研究。主要研究方向包括三维与四维计算机视觉。"
-        translation = "Jiayue Yang is an undergraduate student in Computer Science and Technology at USTC and is currently conducting visiting research at the University of Cambridge. His research focuses on 3D and 4D computer vision."
+        source = "杨家越，中国科学技术大学计算机科学与技术专业本科生，现于剑桥大学开展访问研究。主要研究方向包括三维、四维计算机视觉与空间智能。"
+        translation = "Jiayue Yang is an undergraduate student in Computer Science and Technology at USTC and is currently conducting visiting research at the University of Cambridge. His research focuses on 3D and 4D computer vision and spatial intelligence."
         team = (ROOT / "team.html").read_text(encoding="utf-8")
         i18n = (ROOT / "js" / "i18n.js").read_text(encoding="utf-8")
 
