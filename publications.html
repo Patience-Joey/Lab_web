@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>学术成果 - SPIN Lab</title>
-  <script src="js/i18n-preload.js?v=20260826c"></script>
+  <script src="js/i18n-preload.js?v=20260826d"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css?v=20260824b">
   <!-- Font Awesome 图标库 -->
@@ -386,6 +386,61 @@
             <div class="year-line"></div>
           </div>
        
+          <!-- 论文: Text2Loc++ -->
+          <div class="publication-card" data-category="journal">
+            <h3 class="publication-title">Text2Loc++: Generalizing 3D Point Cloud Localization from Natural Language</h3>
+            <p class="publication-authors">Yan Xia*,†, Letian Shi*, Yilin Di, João F. Henriques, Daniel Cremers</p>
+            <span class="publication-venue">TPAMI 2026</span>
+            <p class="publication-abstract">
+              Text2Loc++ generalizes natural-language 3D point-cloud localization to diverse city-scale environments. It introduces a new dataset with three levels of linguistic complexity and a coarse-to-fine cross-modal architecture combining hierarchical text encoding, attention-based point-cloud features, masked instance training, modality-aware contrastive learning, prototype-based map cloning, and cascaded cross-attention. The method improves localization accuracy by up to 15% on KITTI360Pose and generalizes robustly to the newly introduced dataset.
+            </p>
+            <div class="publication-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11654523/" class="publication-link"><i class="fas fa-external-link-alt"></i> IEEE</a>
+              <a href="https://arxiv.org/abs/2511.15308" class="publication-link"><i class="fas fa-file-pdf"></i> arXiv</a>
+            </div>
+            <div class="publication-info">
+              <div class="publication-tags">
+                <span class="publication-tag">自然语言定位</span>
+                <span class="publication-tag">三维点云</span>
+                <span class="publication-tag">跨模态对齐</span>
+              </div>
+              <div class="publication-metrics">
+                <div class="metric">
+                  <i class="fas fa-quote-right"></i>
+                  <span class="citation-count">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 论文: SemCityLoc -->
+          <div class="publication-card" data-category="conference">
+            <h3 class="publication-title">SemCityLoc: Aerial 6DoF Localization Using Semantic 3D City Models</h3>
+            <p class="publication-authors">Jingfeng Mao, Xuyang Chen, Qilin Zhang, Oussema Dhaouadi, Guangming Wang, Brian Sheil, Daniel Cremers, Yan Xia, Olaf Wysocki</p>
+            <span class="publication-venue">ECCV 2026</span>
+            <p class="publication-abstract">
+              SemCityLoc estimates aerial 6DoF poses by aligning foundation-model semantic cues and monocular depth with standardized semantic 3D city models, removing the need for radiometric scene reconstructions. It also introduces SemCityLockeD, a real-world benchmark with centimeter-accurate UAV poses and LoD1–LoD3 city models. The method improves recall by up to 36% and reduces mean positional error from 9.89 m to 2.62 m in challenging urban environments.
+            </p>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2606.27444" class="publication-link"><i class="fas fa-file-pdf"></i> arXiv</a>
+              <a href="https://github.com/Albertchen98/SemCityLoc" class="publication-link"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://albertchen98.github.io/SemCityLoc/" class="publication-link"><i class="fas fa-globe"></i> 项目主页</a>
+            </div>
+            <div class="publication-info">
+              <div class="publication-tags">
+                <span class="publication-tag">无人机定位</span>
+                <span class="publication-tag">六自由度位姿</span>
+                <span class="publication-tag">语义三维城市模型</span>
+              </div>
+              <div class="publication-metrics">
+                <div class="metric">
+                  <i class="fas fa-quote-right"></i>
+                  <span class="citation-count">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
               <!-- 论文: TARGO -->
           <div class="publication-card" data-category="journal">
             <h3 class="publication-title">TARGO and TARGO-Net: Benchmarking Target-driven Object Grasping under Occlusions</h3>
@@ -1131,7 +1186,7 @@ LiDAR place recognition is a critical capability for autonomous navigation and c
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
-  <script src="js/i18n.js?v=20260826c"></script>
+  <script src="js/i18n.js?v=20260826d"></script>
   <script>
     // 论文过滤功能
     document.addEventListener('DOMContentLoaded', function () {
