@@ -48,7 +48,7 @@ class RecentPublicationTests(unittest.TestCase):
         self.assertIn("我组联合组织ECCV 2026 TwinWorld专题研讨会", self.home)
         self.assertIn("2026年9月8日在瑞典马尔默举行", self.home)
         self.assertIn("https://twin-world.github.io/", self.home)
-        self.assertIn("https://twin-world.github.io/assets/logo/icon-dark.png", self.home)
+        self.assertIn("images/twinworld-teaser.jpg", self.home)
 
 
 if __name__ == "__main__":
