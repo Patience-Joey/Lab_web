@@ -200,6 +200,10 @@
     '研究经验': 'Research Experience',
     '专业技能': 'Technical Skills',
     '语言能力': 'Language Skills',
+    '计算机科学、人工智能、数据科学、应用数学或相关专业背景，具有扎实的编程和数学基础。博士后申请者需具有相关领域的博士学位。博士申请者需具有相关领域的硕士学位或同等研究经历。': 'Background in computer science, artificial intelligence, data science, applied mathematics, or a related field, with a solid foundation in programming and mathematics. Postdoctoral applicants must hold a PhD in a related field. PhD applicants must hold a master’s degree or equivalent research experience in a related field.',
+    '博士后申请者需具有优秀的研究成果，在顶级期刊或会议发表多篇高质量论文，具备独立开展前沿研究的能力。博士申请者需具有相关研究经验，并有发表高质量论文的记录。硕士申请者应有一定的科研经历或项目实践经验。本科生应具有良好的学习成绩和科研潜力。': 'Postdoctoral applicants should have an outstanding research record, with multiple high-quality papers in top journals or conferences and the ability to conduct independent, cutting-edge research. PhD applicants should have relevant research experience and a track record of high-quality publications. Master’s applicants should have some research or project experience. Undergraduates should have strong academic performance and research potential.',
+    '熟练掌握Python、Java等编程语言，熟悉深度学习框架如PyTorch或TensorFlow，具备数据分析和机器学习基础知识。': 'Proficient in programming languages such as Python and Java, familiar with deep learning frameworks such as PyTorch or TensorFlow, and equipped with a foundation in data analysis and machine learning.',
+    '良好的中英文读写和交流能力，能够阅读英文文献，撰写英文论文，参与国际学术交流。': 'Strong reading, writing, and communication skills in both Chinese and English, with the ability to read English-language literature, write papers in English, and participate in international academic exchange.',
     '请有意向的同学将个人简历（含GPA）、成绩单、代表性项目或论文材料发送至邮箱：yan.xia@ustc.edu.cn，邮件标题请注明“应聘实习/硕士/博士/博士后+姓名+学校”。': 'Please email your CV (including GPA), transcript, and representative projects or papers to yan.xia@ustc.edu.cn. Use the subject: “Application – Internship/Master/PhD/Postdoc – Name – University.”',
 
     '全部成果': 'All',
